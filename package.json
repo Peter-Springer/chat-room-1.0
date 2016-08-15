@@ -1,0 +1,33 @@
+{
+  "name": "chat-room-1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peter-Springer/chat-room-1.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peter-Springer/chat-room-1.0/issues"
+  },
+  "homepage": "https://github.com/Peter-Springer/chat-room-1.0#readme",
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "mocha": "^3.0.2",
+    "mocha-loader": "^0.7.1",
+    "node-sass": "^3.8.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
