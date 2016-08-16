@@ -12,7 +12,7 @@ describe('input field', function(){
   it('should have an input field for a message', function(){
     browser.url('/');
     var input = browser.element('.input-field');
-    input.setValue('hello')
+    input.setValue('hello');
     assert.equal(input.getValue(), 'hello');
   });
 });
@@ -32,7 +32,25 @@ describe('send button', function(){
     var button = browser.element('#send-button');
     var input = browser.element('.input-field');
     input.setValue('hello');
-    console.log(input.getValue());
     assert.equal(browser.isEnabled('#send-button'), true);
   });
+
+  it('should append the message to the DOM', function(){
+    browser.url('/');
+    var input = browser.element('.input-field');
+    input.setValue('hello');
+    browser.click('#send-button');
+    assert.equal(browser.getText('.message'), 'hello');
+  });
 });
+
+  describe('delete button', function() {
+    it('should remove specific message when clicked', function() {
+      browser.url('/');
+      var input = browser.element('.input-field');
+      input.setValue('hello');
+      browser.click('#send-button');
+      browser.click('.delete-button');
+      assert.equal(browser.isExisting('.message'), false);
+    });
+  });
