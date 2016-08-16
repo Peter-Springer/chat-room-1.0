@@ -4,10 +4,24 @@ body {
   color: $primary-text-color
 }
 
-.message {
+body {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+.message{
   background-color: blue;
+  width: 80%;
+  margin-left: 50px;
+}
+
+.delete-button {
+  margin-left: 50px;
 }
 
 .message-ai {
   background-color: yellow;
+  width: 80%;
+  margin-right: 50px;
 }
