@@ -26,7 +26,7 @@ describe('chatroom', function () {
   });
   it('length of chatroom.messages array should increase by one each time appendMessage is excecuted', function () {
     var chatroom = new Chatroom('title');
-    var message = new Message('username', 'body');
+    var message = new Message('username', 'body', 'id');
     chatroom.appendMessage(message);
     chatroom.appendMessage(message);
     chatroom.appendMessage(message);
@@ -41,10 +41,21 @@ describe('chatroom', function () {
     assert.equal(chatroom.users.length, 3);
   });
 
-  it.skip('should have messages which are objects', function () {
+  it('should have a function called setStorage which equals chatroom.messages', function () {
+    localStorage.clear();
     var chatroom = new Chatroom('title');
-    assert.isObject(chatroom.messages);
+    var message = new Message('username', 'body', 'id');
+    chatroom.appendMessage(message);
+    assert.equal(localStorage.getItem('messages'), JSON.stringify(chatroom.messages));
   });
-  //chatroom should have a property of messages
-  //chatroom should have a tit
+
+  it('should have a function called getStorage which overwrites chatroom.messages when called', function () {
+    localStorage.clear();
+    var chatroom = new Chatroom('title');
+    var message = new Message('username', 'body', 'id');
+    chatroom.appendMessage(message);
+    chatroom.messages = [];
+    chatroom.getStorage();
+    assert.equal(localStorage.getItem('messages'), JSON.stringify(chatroom.messages));
+  });
 });
