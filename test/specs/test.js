@@ -106,7 +106,7 @@ describe('messages on DOM', function() {
     browser.click('#send-button');
     browser.click('.edit-button');
     // browser.done();
-    assert.equal(message.getAttribute('contenteditable'), true);
+    assert.equal(message.getAttribute('contenteditable'), "true");
   });
 });
 
