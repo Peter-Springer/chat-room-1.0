@@ -7,13 +7,24 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
+  margin: auto;
+  font-family: 'Exo 2', sans-serif;
+  max-width: 700px;
+}
+
+header {
+  width: 100%;
+}
+
+.counter {
+  float: right;
   font-family: 'Exo 2', sans-serif;
 }
 
 h1 {
- font-size: 100px;
+ font-size: 50px;
  font-weight: 900;
  margin-bottom: 20px;
 }
@@ -24,29 +35,37 @@ h1 {
 }
 
 .input-field {
+
   height: 100px;
-  width: 300px;
+  width: 100%;
   font-size: 25px;
+  font-family: 'Exo 2', sans-serif;
+  padding: 5px;
+}
+
+main {
 }
 
 .message{
-  background-color: blue;
-  width: 30%;
-  margin-left: 40%;
+  padding: 5px;
+  background-color: #C8402F;
+  color: white;
+  width: 100%;
   // margin-top: 10px;
   font-size: 25px;
   word-break: break-all;
 }
 
 .message-ai {
-  background-color: yellow;
-  width: 30%;
-  margin-left: 40%;
+  padding: 5px;
+  background-color: #3B648E;
+  color: white;
+  width: 100%;
   font-size: 25px;
 }
 
 .delete-button {
-  margin-left: 40%;
+  float: right;
   background-image: url(/images/cancel.svg);
   background-size: cover;
   height: 30px;
@@ -54,6 +73,7 @@ h1 {
 }
 
 .edit-button {
+  float: right;
   background-image: url(/images/pencil.svg);
   background-size: cover;
   height: 30px;
@@ -65,6 +85,6 @@ h1 {
   background-size: cover;
   height: 50px;
   width: 50px;
-  margin-bottom: 30px;
-  margin-left: 40%;
+  margin-bottom: 10px;
+  float: right;
 }
