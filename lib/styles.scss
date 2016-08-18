@@ -1,21 +1,25 @@
 $primary-text-color: #000000;
+$body-font: 'Exo 2', sans-serif;
+$user-font-color: white;
+$user-chat-color: #39475F;
+$other-chat-color: #DE6F5D;
 
 body {
-  color: $primary-text-color
-}
-
-body {
+  color: $primary-text-color;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
   margin: auto;
-  font-family: 'Exo 2', sans-serif;
+  font-family: $body-font;
   max-width: 700px;
 }
 
 header {
-  width: 100%;
+  h1 {
+    width: 100%;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
 }
 
 .counter {
@@ -23,61 +27,12 @@ header {
   font-family: 'Exo 2', sans-serif;
 }
 
-h1 {
- font-size: 50px;
- font-weight: 900;
- margin-bottom: 20px;
-}
-
-.all-messages {
-  align-items: center;
-  justify-content: center;
-}
-
 .input-field {
-
   height: 100px;
-  width: 100%;
   font-size: 25px;
-  font-family: 'Exo 2', sans-serif;
-  padding: 5px;
-}
-
-main {
-}
-
-.message{
-  padding: 5px;
-  background-color: #C8402F;
-  color: white;
+  font-family: $body-font;
   width: 100%;
-  // margin-top: 10px;
-  font-size: 25px;
-  word-break: break-all;
-}
-
-.message-ai {
-  padding: 5px;
-  background-color: #3B648E;
-  color: white;
-  width: 100%;
-  font-size: 25px;
-}
-
-.delete-button {
-  float: right;
-  background-image: url(/images/cancel.svg);
-  background-size: cover;
-  height: 30px;
-  width: 30px;
-}
-
-.edit-button {
-  float: right;
-  background-image: url(/images/pencil.svg);
-  background-size: cover;
-  height: 30px;
-  width: 30px;
+  padding: 10px;
 }
 
 #send-button {
@@ -85,6 +40,38 @@ main {
   background-size: cover;
   height: 50px;
   width: 50px;
-  margin-bottom: 10px;
   float: right;
+}
+
+.all-messages {
+  .message{
+    background-color: $user-chat-color;
+    color: $user-font-color;
+    font-size: 25px;
+    width: 100%;
+    padding: 10px;
+
+    .delete-button {
+      background-image: url(/images/cancel.svg);
+      background-size: cover;
+      height: 30px;
+      width: 30px;
+      float: right;
+    }
+
+    .edit-button {
+      background-image: url(/images/pencil.svg);
+      background-size: cover;
+      height: 30px;
+      width: 30px;
+      float: right;
+    }
+  }
+
+  .message-ai {
+    background-color: $other-chat-color;
+    font-size: 25px;
+    width: 100%;
+    padding: 10px;
+  }
 }
