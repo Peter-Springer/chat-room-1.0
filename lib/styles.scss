@@ -11,21 +11,21 @@ body {
   margin: auto;
   font-family: $body-font;
   max-width: 700px;
+}
 
-  header {
-    h1 {
-      width: 100%;
-      font-size: 50px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+header {
+  h1 {
+    width: 100%;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
   }
 }
 
 .counter {
   float: right;
+  font-family: 'Exo 2', sans-serif;
 }
-
 
 .input-field {
   height: 100px;
