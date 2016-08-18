@@ -8,7 +8,6 @@
     "build": "webpack",
     "test": "mocha",
     "feature-test": "wdio wdio.conf.js",
-    "feature-start": "node server.js",
     "_comment": "./node_modules/.bin/wdio wdio.conf.js"
   },
   "repository": {
