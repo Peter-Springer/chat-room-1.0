@@ -58,4 +58,14 @@ describe('chatroom', function () {
     chatroom.getStorage();
     assert.equal(localStorage.getItem('messages'), JSON.stringify(chatroom.messages));
   });
+
+  // it('should only render the 10 most recent messages at a time', function () {
+  //   localStorage.clear();
+  //   var chatroom = new Chatroom('title');
+  //   for(var i = 0; i < 12; i++) {
+  //     var message = new Message('username', 'hello', 'id');
+  //     chatroom.appendMessage(message);
+  //   }
+  //   assert.equal(chatroom.messages.length, 10);
+  // });
 });
