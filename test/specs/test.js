@@ -52,7 +52,7 @@ describe('send button', function(){
     var input = browser.element('.input-field');
     input.setValue('hello1');
     browser.click('#send-button');
-    assert.equal(browser.getText('.message'), 'hello1');
+    assert.equal(browser.getText('.message'), 'human: hello1');
     browser.click('.delete-button')
   });
 });
@@ -105,7 +105,8 @@ describe('messages on DOM', function() {
     var message = browser.element('.message');
     browser.click('#send-button');
     browser.click('.edit-button');
-    assert.equal(message.getAttribute('contenteditable'), "true");
+    // browser.done();
+    assert.equal(message.getAttribute('contenteditable'), true);
   });
 });
 
@@ -122,7 +123,7 @@ describe('character counter', function() {
     var input = browser.element('.input-field');
     var counter = browser.element('.counter');
     input.setValue('hello1');
-    assert.equal(counter.getText(), 6);
+    assert.equal(counter.getText(), 'characters:6');
   });
 });
 
