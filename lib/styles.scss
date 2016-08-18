@@ -3,6 +3,7 @@ $body-font: 'Exo 2', sans-serif;
 $user-font-color: white;
 $user-chat-color: #39475F;
 $other-chat-color: #DE6F5D;
+$default-padding: 10px 0px;
 
 body {
   color: $primary-text-color;
@@ -24,7 +25,8 @@ header {
 
 .counter {
   float: right;
-  font-family: 'Exo 2', sans-serif;
+  font-family: $body-font;
+  align-self: baseline;
 }
 
 .input-field {
@@ -32,15 +34,15 @@ header {
   font-size: 25px;
   font-family: $body-font;
   width: 100%;
-  padding: 10px;
+  padding: $default-padding;
 }
 
 #send-button {
+  margin-left: 90%;
   background-image: url(/images/multimedia.svg);
   background-size: cover;
   height: 50px;
   width: 50px;
-  float: right;
 }
 
 .all-messages {
@@ -49,7 +51,7 @@ header {
     color: $user-font-color;
     font-size: 25px;
     width: 100%;
-    padding: 10px;
+    padding:$default-padding;
 
     .delete-button {
       background-image: url(/images/cancel.svg);
@@ -57,6 +59,7 @@ header {
       height: 30px;
       width: 30px;
       float: right;
+      margin-right: 10px;
     }
 
     .edit-button {
@@ -65,6 +68,7 @@ header {
       height: 30px;
       width: 30px;
       float: right;
+      margin-right: 10px;
     }
   }
 
@@ -72,6 +76,6 @@ header {
     background-color: $other-chat-color;
     font-size: 25px;
     width: 100%;
-    padding: 10px;
+    padding: $default-padding;
   }
 }
