@@ -92,7 +92,7 @@ describe('messages on DOM', function() {
   it('should have a contenteditable attribute thats default is false', function() {
     browser.url('/');
     var input = browser.element('.input-field');
-    var message = browser.element('.message');
+    var message = browser.element('.body');
     input.setValue('hello1');
     browser.click('#send-button');
     assert.equal(message.getAttribute('contenteditable'), "false");
@@ -102,11 +102,10 @@ describe('messages on DOM', function() {
     browser.url('/');
     var input = browser.element('.input-field');
     input.setValue('hello1');
-    var message = browser.element('.message');
     browser.click('#send-button');
+    var body = browser.element('.body');
     browser.click('.edit-button');
-    // browser.done();
-    assert.equal(message.getAttribute('contenteditable'), "true");
+    assert.equal(body.getAttribute('contenteditable'), "true");
   });
 });
 
@@ -138,13 +137,28 @@ describe('auto reply', function() {
   });
 });
 
-describe('local storage', function() {
-  it('has data within local storage', function() {
-    browser.url('/');
-    var input = browser.element('.input-field');
-    input.setValue('hello1');
-    var message = browser.element('.message');
-    browser.click('#send-button');
-    assert.equal(browser.localStorageSize().value, 1);
-  });
-});
+// describe('local storage', function() {
+//   it('has data within local storage', function() {
+//     browser.url('/');
+//     var input = browser.element('.input-field');
+//     input.setValue('hello1');
+//     var message = browser.element('.message');
+//     browser.click('#send-button');
+//     assert.equal(browser.localStorageSize().value, 1);
+//   });
+// });
+
+// describe('Number of messages displayed', function() {
+//   it('should display the latest 10 messages', function() {
+//     browser.url('/');
+//     var input = browser.element('.input-field');
+//     var liCount = browser.element('li');
+//     console.log(liCount);
+//     console.log(liCount.length)
+//     for (var i = 0; i < 5; i++) {
+//       input.setValue('hello1');
+//       browser.click('#send-button');
+//     }
+//     assert.equal(liCount , 4);
+//   });
+// });
