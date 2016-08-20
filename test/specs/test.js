@@ -144,7 +144,7 @@ describe('auto reply', function() {
 //     input.setValue('hello1');
 //     var message = browser.element('.message');
 //     browser.click('#send-button');
-//     assert.equal(browser.localStorageSize().value, 1);
+//     browser.localStorage().then(function());
 //   });
 // });
 
