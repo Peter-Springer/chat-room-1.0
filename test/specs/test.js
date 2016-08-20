@@ -53,7 +53,7 @@ describe('send button', function(){
     input.setValue('hello1');
     browser.click('#send-button');
     assert.equal(browser.getText('.message'), 'human: hello1');
-    browser.click('.delete-button')
+    browser.click('.delete-button');
   });
 });
 
@@ -82,7 +82,7 @@ describe('messages on DOM', function() {
   it('messages should exist after send is clicked', function(){
     browser.url('/');
     var input = browser.element('.input-field');
-    var message = browser.element('.message')
+    var message = browser.element('.message');
     input.setValue('hello1');
     browser.click('#send-button');
     assert.equal(message.isExisting(), true);
@@ -113,7 +113,9 @@ describe('messages on DOM', function() {
 describe('character counter', function() {
   it('character count should exist on page load', function(){
     browser.url('/');
-    var counter = browser.element('.counter')
+    var input = browser.element('.input-field');
+    var counter = browser.element('.counter');
+    input.setValue('hello1');
     assert.equal(counter.isExisting(), true);
   });
 
@@ -122,7 +124,7 @@ describe('character counter', function() {
     var input = browser.element('.input-field');
     var counter = browser.element('.counter');
     input.setValue('hello1');
-    assert.equal(counter.getText(), 'characters:6');
+    assert.equal(counter.getText(), 'characters: 6');
   });
 });
 
@@ -137,6 +139,43 @@ describe('auto reply', function() {
   });
 });
 
+describe('show more and show less', function() {
+  it('should have no show more button if less than 10 messages exist', function() {
+    browser.url('/');
+    var input = browser.element('.input-field');
+    var aimessage = browser.element('.message-ai');
+    var showMore = browser.element('.show-more');
+    input.setValue('hello1');
+    browser.click('#send-button');
+    assert.equal(showMore.isVisible(), false);
+  });
+  it('should have no show more button if less than 10 messages exist', function() {
+    browser.url('/');
+    var input = browser.element('.input-field');
+    var aimessage = browser.element('.message-ai');
+    var showMore = browser.element('.show-more');
+    for (let i = 0; i < 12; i++) {
+      input.setValue('hello1');
+      browser.click('#send-button');
+    }
+    assert.equal(showMore.isVisible(), true);
+  });
+  it('should have no show more button if less than 10 messages exist', function() {
+    browser.url('/');
+    var input = browser.element('.input-field');
+    var aimessage = browser.element('.message-ai');
+    for (let i = 0; i < 12; i++) {
+      input.setValue('hello1');
+      browser.click('#send-button');
+    }
+    browser.click('.show-more');
+    var showMore = browser.element('.show-more');
+    var showLess = browser.element('.show-less');
+    assert.equal(showMore.isVisible(), false);
+    assert.equal(showLess.isVisible(), true);
+  });
+});
+
 // describe('local storage', function() {
 //   it('has data within local storage', function() {
 //     browser.url('/');
@@ -144,21 +183,10 @@ describe('auto reply', function() {
 //     input.setValue('hello1');
 //     var message = browser.element('.message');
 //     browser.click('#send-button');
-//     browser.localStorage().then(function());
-//   });
-// });
-
-// describe('Number of messages displayed', function() {
-//   it('should display the latest 10 messages', function() {
-//     browser.url('/');
-//     var input = browser.element('.input-field');
-//     var liCount = browser.element('li');
-//     console.log(liCount);
-//     console.log(liCount.length)
-//     for (var i = 0; i < 5; i++) {
-//       input.setValue('hello1');
-//       browser.click('#send-button');
-//     }
-//     assert.equal(liCount , 4);
+//     input.setValue('hello1');
+//     browser.click('#send-button');
+//     var arr = [];
+//     arr.push(browser.localStorage('GET', 'messages'));
+//     assert.equal(arr.length, 1);
 //   });
 // });
