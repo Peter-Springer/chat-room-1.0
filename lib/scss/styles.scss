@@ -5,9 +5,7 @@ body {
   color: $primary-text-color;
   margin: auto;
   font-family: $body-font;
-  width: 500px;
-  // min-width: 300px;
-  // max-width: 700px;
+  max-width: 500px;
 
   h1 {
     width: 100%;
