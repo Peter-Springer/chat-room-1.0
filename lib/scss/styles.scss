@@ -1,76 +1,121 @@
 @import "variables";
 
 body {
+  @include flex-column-container;
   color: $primary-text-color;
-  display: flex;
-  flex-direction: column;
   margin: auto;
   font-family: $body-font;
-  max-width: 700px;
-}
+  width: 500px;
+  // min-width: 300px;
+  // max-width: 700px;
 
-header {
   h1 {
     width: 100%;
     font-size: $large-font;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 2%;
   }
-}
 
-.counter {
-  float: right;
-  font-family: $body-font;
-  align-self: baseline;
-}
-
-.input-field {
-  height: 100px;
-  font-size: 25px;
-  font-family: $body-font;
-  width: 100%;
-  padding: $default-padding;
-}
-
-#send-button {
-  margin-left: 90%;
-  background-image: url(/images/multimedia.svg);
-  background-size: cover;
-  height: 50px;
-  width: 50px;
-}
-
-.all-messages {
-  .message{
-    background-color: $user-chat-color;
-    color: $user-font-color;
-    font-size: 25px;
+  .show-more, .show-less {
+    @include showmore-send-button;
+    margin: 5px 0 0 0;
+    &:hover {
+      background-color: #0a9984;
+    }
+  }
+  .all-messages {
+    @include flex-column-container;
     width: 100%;
-    padding:$default-padding;
+
+    .message-container, .ai-container {
+      position: relative;
+      background-color: #fff;
+      border: 5px solid #666;
+      color: $user-font-color;
+      font-size: $small-font;
+      width: 100%;
+      word-wrap: break-word;
+      margin: 5%;
+      -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+      -webkit-box-shadow: 2px 2px 4px #888;
+      -moz-box-shadow: 2px 2px 4px #888;
+      box-shadow: 2px 2px 4px #888;
+    }
+    .body  {
+      font-weight: normal;
+    }
 
     .delete-button {
-      background-image: url(/images/cancel.svg);
-      background-size: cover;
-      height: 30px;
-      width: 30px;
-      float: right;
-      margin-right: 10px;
+      @include button-style;
+      background-image: url(/images/delete.svg);
+      &:hover {
+        background-image: url(/images/delete-hover.svg);
+      }
     }
 
     .edit-button {
+      @include button-style;
       background-image: url(/images/pencil.svg);
-      background-size: cover;
-      height: 30px;
-      width: 30px;
-      float: right;
-      margin-right: 10px;
+    }
+
+    .message-container:before {
+      @include arrow-beneath-messages;
+      left: 30px;
+      border: 15px solid;
+      border-color: #666 transparent transparent #666;
+    }
+
+    .message-container:after {
+      @include arrow-beneath-messages;
+      border: 8px solid;
+      left: 35px;
+      border-color: #fff transparent transparent #fff;
+    }
+
+    .ai-container:before{
+      @include arrow-beneath-messages;
+      right: 30px;
+      border: 15px solid;
+      border-color: #666 #666 transparent transparent;
+    }
+
+    .ai-container:after {
+      @include arrow-beneath-messages;
+      right: 35px;
+      border: 8px solid;
+      border-color: #fff #fff transparent transparent;
+    }
+
+    .message, .message-ai {
+      margin: 5%;
+      font-weight: bold;
     }
   }
 
-  .message-ai {
-    background-color: $other-chat-color;
-    font-size: 25px;
+  .input-container {
     width: 100%;
-    padding: $default-padding;
+    @include flex-column-container;
+
+    .counter {
+      font-family: $body-font;
+    }
+
+    .input-field {
+      font-size: $medium-font;
+      font-family: $body-font;
+      width: 100%;
+      padding: $default-padding;
+      border-radius: $standard-border-radius;
+    }
+
+    #send-button {
+      @include showmore-send-button;
+      margin: 5px 0;
+      &:hover {
+        background-color: #0a9984;
+      }
+    }
   }
 }

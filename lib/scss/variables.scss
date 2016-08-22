@@ -1,7 +1,45 @@
 $primary-text-color: #000000;
 $body-font: 'Exo 2', sans-serif;
-$user-font-color: white;
+$user-font-color: black;
 $user-chat-color: #39475F;
 $other-chat-color: #DE6F5D;
 $default-padding: 10px 0px;
+$small-font: 20px;
+$medium-font: 25px;
 $large-font: 50px;
+$standard-border-radius: 3%;
+
+@mixin button-style {
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  float: right;
+  margin: 0 10px 10px 0;
+  border-radius: 50%;
+  border: none;
+}
+
+@mixin flex-column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin arrow-beneath-messages {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+}
+
+@mixin showmore-send-button {
+  height: 100%;
+  width: 50%;
+  border: none;
+  font-size: $medium-font;
+  border-radius: $standard-border-radius;
+  background-color: #82b3a7;
+  font-family: $body-font;
+  font-weight: bold;
+}
