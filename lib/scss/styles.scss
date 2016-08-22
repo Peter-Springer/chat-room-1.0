@@ -48,15 +48,15 @@ body {
 
     .delete-button {
       @include button-style;
-      background-image: url(/lib/images/delete.svg);
+      background-image: url(https://github.com/Peter-Springer/chat-room-1.0/tree/gh-pages/lib/images/delete.svg);
       &:hover {
-        background-image: url(/lib/images/delete-hover.svg);
+        background-image: url(https://github.com/Peter-Springer/chat-room-1.0/tree/gh-pages/lib/images/delete-hover.svg);
       }
     }
 
     .edit-button {
       @include button-style;
-      background-image: url(/lib/images/pencil.svg);
+      background-image: url(https://github.com/Peter-Springer/chat-room-1.0/tree/gh-pages/lib/images/pencil.svg);
     }
 
     .message-container:before {
