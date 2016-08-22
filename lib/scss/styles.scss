@@ -48,15 +48,15 @@ body {
 
     .delete-button {
       @include button-style;
-      background-image: url(/images/delete.svg);
+      background-image: url(./images/delete.svg);
       &:hover {
-        background-image: url(/images/delete-hover.svg);
+        background-image: url(./images/delete-hover.svg);
       }
     }
 
     .edit-button {
       @include button-style;
-      background-image: url(/images/pencil.svg);
+      background-image: url(./images/pencil.svg);
     }
 
     .message-container:before {
