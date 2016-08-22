@@ -5,10 +5,10 @@ body {
   color: $primary-text-color;
   margin: auto;
   font-family: $body-font;
+  width: 100%;
   max-width: 500px;
 
   h1 {
-    width: 100%;
     font-size: $large-font;
     font-weight: 700;
     margin-bottom: 2%;
@@ -32,6 +32,7 @@ body {
       color: $user-font-color;
       font-size: $small-font;
       width: 100%;
+      max-width: 500px;
       word-wrap: break-word;
       margin: 5%;
       -webkit-border-radius: 30px;
