@@ -2,4 +2,4 @@
 
 This is a chat application where a user can interact with a chat bot.
 
-<img src="./images/chatapp.jpg">
+<img src="./images/chatapp.jpg" height="400px" width="200px">
