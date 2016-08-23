@@ -44,12 +44,13 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
 	const Reset       = __webpack_require__(1);
 	const Styles      = __webpack_require__(5);
-	const Chatroom    = __webpack_require__(7);
-	const Message     = __webpack_require__(8);
-	const User        = __webpack_require__(9);
-	const $           = __webpack_require__(10);
+	const Chatroom    = __webpack_require__(10);
+	const Message     = __webpack_require__(11);
+	const User        = __webpack_require__(12);
+	const $           = __webpack_require__(13);
 	const input       = $('.input-field');
 	const sendButton  = $('#send-button');
 	const counter     = $('.counter');
@@ -57,8 +58,6 @@
 	const allMessages = $('.all-messages');
 	let chatroom      = new Chatroom('title');
 
-	chatroom.getStorage();
-	renderMessages();
 
 	function renderMessages() {
 	  if (chatroom.messages.length < 11) {
@@ -253,6 +252,9 @@
 	  'I have to agree','Someone is oversharing', '#pluglife'
 	]
 	};
+
+	chatroom.getStorage();
+	renderMessages();
 
 
 /***/ },
@@ -638,17 +640,35 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  color: #000000;\n  margin: auto;\n  font-family: \"Exo 2\", sans-serif;\n  width: 100%;\n  max-width: 500px; }\n  body h1 {\n    font-size: 50px;\n    font-weight: 700;\n    margin-bottom: 2%; }\n  body .show-more, body .show-less {\n    height: 100%;\n    width: 50%;\n    border: none;\n    font-size: 25px;\n    border-radius: 3%;\n    background-color: #82b3a7;\n    font-family: \"Exo 2\", sans-serif;\n    font-weight: bold;\n    margin: 5px 0 0 0; }\n    body .show-more:hover, body .show-less:hover {\n      background-color: #0a9984; }\n  body .all-messages {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 100%; }\n    body .all-messages .message-container, body .all-messages .ai-container {\n      position: relative;\n      background-color: #fff;\n      border: 5px solid #666;\n      color: black;\n      font-size: 20px;\n      width: 100%;\n      max-width: 500px;\n      word-wrap: break-word;\n      margin: 5%;\n      -webkit-border-radius: 30px;\n      -moz-border-radius: 30px;\n      border-radius: 30px;\n      -webkit-box-shadow: 2px 2px 4px #888;\n      -moz-box-shadow: 2px 2px 4px #888;\n      box-shadow: 2px 2px 4px #888; }\n    body .all-messages .body {\n      font-weight: normal; }\n    body .all-messages .delete-button {\n      background-size: cover;\n      height: 30px;\n      width: 30px;\n      float: right;\n      margin: 0 10px 10px 0;\n      border-radius: 50%;\n      border: none;\n      background-image: url(https://github.com/Peter-Springer/chat-room-1.0/tree/gh-pages/lib/images/delete.svg); }\n      body .all-messages .delete-button:hover {\n        background-image: url(https://github.com/Peter-Springer/chat-room-1.0/tree/gh-pages/lib/images/delete-hover.svg); }\n    body .all-messages .edit-button {\n      background-size: cover;\n      height: 30px;\n      width: 30px;\n      float: right;\n      margin: 0 10px 10px 0;\n      border-radius: 50%;\n      border: none;\n      background-image: url(https://github.com/Peter-Springer/chat-room-1.0/tree/gh-pages/lib/images/pencil.svg); }\n    body .all-messages .message-container:before {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      left: 30px;\n      border: 15px solid;\n      border-color: #666 transparent transparent #666; }\n    body .all-messages .message-container:after {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      border: 8px solid;\n      left: 35px;\n      border-color: #fff transparent transparent #fff; }\n    body .all-messages .ai-container:before {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      right: 30px;\n      border: 15px solid;\n      border-color: #666 #666 transparent transparent; }\n    body .all-messages .ai-container:after {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      right: 35px;\n      border: 8px solid;\n      border-color: #fff #fff transparent transparent; }\n    body .all-messages .message, body .all-messages .message-ai {\n      margin: 5%;\n      font-weight: bold; }\n  body .input-container {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n    body .input-container .counter {\n      font-family: \"Exo 2\", sans-serif; }\n    body .input-container .input-field {\n      font-size: 25px;\n      font-family: \"Exo 2\", sans-serif;\n      width: 100%;\n      padding: 10px 0px;\n      border-radius: 3%; }\n    body .input-container #send-button {\n      height: 100%;\n      width: 50%;\n      border: none;\n      font-size: 25px;\n      border-radius: 3%;\n      background-color: #82b3a7;\n      font-family: \"Exo 2\", sans-serif;\n      font-weight: bold;\n      margin: 5px 0; }\n      body .input-container #send-button:hover {\n        background-color: #0a9984; }\n", ""]);
+	exports.push([module.id, "body {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  color: #000000;\n  margin: auto;\n  font-family: \"Exo 2\", sans-serif;\n  width: 100%;\n  max-width: 500px; }\n  body h1 {\n    font-size: 50px;\n    font-weight: 700;\n    margin-bottom: 2%; }\n  body .show-more, body .show-less {\n    height: 100%;\n    width: 50%;\n    border: none;\n    font-size: 25px;\n    border-radius: 3%;\n    background-color: #82b3a7;\n    font-family: \"Exo 2\", sans-serif;\n    font-weight: bold;\n    margin: 5px 0 0 0; }\n    body .show-more:hover, body .show-less:hover {\n      background-color: #0a9984; }\n  body .all-messages {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    width: 100%; }\n    body .all-messages .message-container, body .all-messages .ai-container {\n      position: relative;\n      background-color: #fff;\n      border: 5px solid #666;\n      color: black;\n      font-size: 20px;\n      width: 100%;\n      max-width: 500px;\n      word-wrap: break-word;\n      margin: 5%;\n      -webkit-border-radius: 30px;\n      -moz-border-radius: 30px;\n      border-radius: 30px;\n      -webkit-box-shadow: 2px 2px 4px #888;\n      -moz-box-shadow: 2px 2px 4px #888;\n      box-shadow: 2px 2px 4px #888; }\n    body .all-messages .body {\n      font-weight: normal; }\n    body .all-messages .delete-button {\n      background-size: cover;\n      height: 30px;\n      width: 30px;\n      float: right;\n      margin: 0 10px 10px 0;\n      border-radius: 50%;\n      border: none;\n      background-image: url(" + __webpack_require__(7) + "); }\n      body .all-messages .delete-button:hover {\n        background-image: url(" + __webpack_require__(8) + "); }\n    body .all-messages .edit-button {\n      background-size: cover;\n      height: 30px;\n      width: 30px;\n      float: right;\n      margin: 0 10px 10px 0;\n      border-radius: 50%;\n      border: none;\n      background-image: url(" + __webpack_require__(9) + "); }\n    body .all-messages .message-container:before {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      left: 30px;\n      border: 15px solid;\n      border-color: #666 transparent transparent #666; }\n    body .all-messages .message-container:after {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      border: 8px solid;\n      left: 35px;\n      border-color: #fff transparent transparent #fff; }\n    body .all-messages .ai-container:before {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      right: 30px;\n      border: 15px solid;\n      border-color: #666 #666 transparent transparent; }\n    body .all-messages .ai-container:after {\n      content: ' ';\n      position: absolute;\n      width: 0;\n      height: 0;\n      top: 100%;\n      right: 35px;\n      border: 8px solid;\n      border-color: #fff #fff transparent transparent; }\n    body .all-messages .message, body .all-messages .message-ai {\n      margin: 5%;\n      font-weight: bold; }\n  body .input-container {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n    body .input-container .counter {\n      font-family: \"Exo 2\", sans-serif; }\n    body .input-container .input-field {\n      font-size: 25px;\n      font-family: \"Exo 2\", sans-serif;\n      width: 100%;\n      padding: 10px 0px;\n      border-radius: 3%; }\n    body .input-container #send-button {\n      height: 100%;\n      width: 50%;\n      border: none;\n      font-size: 25px;\n      border-radius: 3%;\n      background-color: #82b3a7;\n      font-family: \"Exo 2\", sans-serif;\n      font-weight: bold;\n      margin: 5px 0; }\n      body .input-container #send-button:hover {\n        background-color: #0a9984; }\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 7 */
+/***/ function(module, exports) {
+
+	module.exports = "\"data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E %3C!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 20 20' style='enable-background:new 0 0 20 20;' xml:space='preserve'%3E %3Cstyle type='text/css'%3E .st0%7Bfill:%23D1D3D4;%7D .st1%7Bfill:%23FFFFFF;%7D %3C/style%3E %3Cg%3E %3Cg%3E %3Cellipse transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.1604 9.9558)' class='st0' cx='9.9' cy='10' rx='8.7' ry='8.7'/%3E %3Cg%3E %3Crect x='5.7' y='9.5' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.1604 9.9559)' class='st1' width='8.5' height='1'/%3E %3Crect x='9.4' y='5.7' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.1604 9.9559)' class='st1' width='1' height='8.5'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3C/svg%3E\""
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = "\"data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E %3C!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 20 20' style='enable-background:new 0 0 20 20;' xml:space='preserve'%3E %3Cstyle type='text/css'%3E .st0%7Bfill:%23EF4136;%7D .st1%7Bfill:%23FFFFFF;%7D %3C/style%3E %3Cg%3E %3Cg%3E %3Cellipse transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.1604 9.9558)' class='st0' cx='9.9' cy='10' rx='8.7' ry='8.7'/%3E %3Cg%3E %3Crect x='5.7' y='9.5' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.1604 9.956)' class='st1' width='8.5' height='1'/%3E %3Crect x='9.4' y='5.7' transform='matrix(0.7071 -0.7071 0.7071 0.7071 -4.1604 9.956)' class='st1' width='1' height='8.5'/%3E %3C/g%3E %3C/g%3E %3C/g%3E %3C/svg%3E\""
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "\"data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='iso-8859-1'?%3E %3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 300 300' style='enable-background:new 0 0 300 300;' xml:space='preserve'%3E %3Cg%3E %3Cg%3E %3Cpath d='M149.996,0C67.157,0,0.001,67.161,0.001,149.997S67.157,300,149.996,300s150.003-67.163,150.003-150.003 S232.835,0,149.996,0z M221.302,107.945l-14.247,14.247l-29.001-28.999l-11.002,11.002l29.001,29.001l-71.132,71.126 l-28.999-28.996L84.92,186.328l28.999,28.999l-7.088,7.088l-0.135-0.135c-0.786,1.294-2.064,2.238-3.582,2.575l-27.043,6.03 c-0.405,0.091-0.817,0.135-1.224,0.135c-1.476,0-2.91-0.581-3.973-1.647c-1.364-1.359-1.932-3.322-1.512-5.203l6.027-27.035 c0.34-1.517,1.286-2.798,2.578-3.582l-0.137-0.137L192.3,78.941c1.678-1.675,4.404-1.675,6.082,0.005l22.922,22.917 C222.982,103.541,222.982,106.267,221.302,107.945z'/%3E %3C/g%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3C/svg%3E\""
+
+/***/ },
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	const Message = __webpack_require__(8);
-	const User    = __webpack_require__(9);
+	const Message = __webpack_require__(11);
+	const User    = __webpack_require__(12);
 
 	class Chatroom {
 	  constructor(title) {
@@ -682,7 +702,7 @@
 
 
 /***/ },
-/* 8 */
+/* 11 */
 /***/ function(module, exports) {
 
 	class Message {
@@ -698,7 +718,7 @@
 
 
 /***/ },
-/* 9 */
+/* 12 */
 /***/ function(module, exports) {
 
 	class User {
@@ -714,7 +734,7 @@
 
 
 /***/ },
-/* 10 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/

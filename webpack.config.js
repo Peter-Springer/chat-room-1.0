@@ -11,6 +11,7 @@ module.exports = {
   },
   module: {
     loaders: [
+      { test: /\.svg/, loader: 'svg-url-loader'},
       { test: /\.css$/, loader: "style!css" },
       { test: /\.scss$/, loader: "style!css!sass" }
     ]
